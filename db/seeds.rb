@@ -13,3 +13,12 @@ Item.all.each do |item|
   item.save
   counter += 1
 end
+
+
+abe = User.create(
+      :email => "abe@abe.com",
+      :password => "password",        
+    )
+
+
+cart1 = Cart.create

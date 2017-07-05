@@ -3,5 +3,9 @@
 <ul>
 <% @category.items.each do |item| %>
     <li><%= link_to item.title, item_path(item) %></li>
+    <li>$<%= (item.price/100.00).round(3) %></li>
+    <% if user_signed_in?   %>
+    	<%= button_to 'Add to Cart', line_items_path(item_id: item.id)     %>
+    <% end %>
 <% end %>
 </ul>
